@@ -147,6 +147,22 @@ header .logo h1 {
   flex-direction: column;
   gap: 0.8rem;
 }
+.empty-icon {
+  font-size: 40px;
+  color: var(--text);
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1.3rem;
+  opacity: 0.7;
+  gap: 1.2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .modal-content input,
 .modal-content textarea {
@@ -164,7 +180,7 @@ header .logo h1 {
 }
 
 .task-footer {
-  margin-block: 0.9rem;
+  margin-block: 1.5rem;
   display: flex;
   justify-content: space-between;
 }
