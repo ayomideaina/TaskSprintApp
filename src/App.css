@@ -1,0 +1,224 @@
+.container {
+  width: 90%;
+  max-width: 650px;
+  margin: 80px auto 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+header .logo h1 {
+  font-family: "Cormorant SC", serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  background: var(--logo-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.header-controls {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-controls input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 0.7rem;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-btn,
+.add-btn {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.task-box {
+  margin-top: 1rem;
+  background: var(--card);
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.circle-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border, #777);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.check-icon {
+  font-size: 14px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.task-item.completed .circle-btn {
+  background: linear-gradient(135deg, #55ddff, #c058f3);
+  border-color: transparent;
+}
+
+.task-item.completed .check-icon {
+  opacity: 1;
+}
+
+.task-left {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.task-title {
+  font-size: 1.28rem;
+  font-weight: 600;
+}
+
+.task-date {
+  font-size: 0.78rem;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-item.overdue .task-date {
+  color: #ff3b3b;
+}
+
+.task-item.due-soon .task-date {
+  color: orange;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--card);
+  padding: 1.3rem;
+  width: 350px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.task-footer {
+  margin-block: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-btn {
+  background: var(--bg);
+  color: var(--btn);
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 1rem;
+}
+
+.filter-btn.active {
+  color: var(--primary);
+}
+
+.clear-btn {
+  background: var(--bg);
+  color: var(--clearbtn);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background: #e74c3c;
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .task-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

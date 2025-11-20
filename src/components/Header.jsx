@@ -1,29 +1,23 @@
+import { faMoon, faPlus, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSun, faMoon, faPlus } from "../icons";
 
+const Header = ({ theme, toggleTheme, openAdd }) => (
+  <header className="container">
+    <div className="logo">
+      <h1>Task Sprint</h1>
+    </div>
 
-const Header = ({ onAddClick, toggleTheme }) => {
+    <div className="header-buttons">
+      <button className="icon-btn" onClick={toggleTheme}>
+        <FontAwesomeIcon icon={theme === "light" ? faMoon : faSun} />
+      </button>
 
-    return (
-    <header className="container">
-      <div className="logo">
-        <h1>Task Sprint</h1>
-      </div>
-
-      <div className="header-controls">
-        <input type="text" placeholder="Search tasks..." />
-
-        <div className="header-buttons">
-          <button className="icon-btn" onClick={toggleTheme}>
-            <i className="fas fa-sun"></i>
-          </button>
-
-          <button className="add-btn" onClick={onAddClick}>
-            <i className="fa-solid fa-plus"></i> Add Task
-          </button>
-        </div>
-      </div>
-    </header>
-  );
-}
-
+      <button className="add-btn" onClick={openAdd}>
+        <FontAwesomeIcon icon={faPlus} /> Add Task
+      </button>
+    </div>
+  </header>
+);
 
 export default Header;
